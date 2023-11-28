@@ -1,11 +1,4 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
-function enqueue_parent_styles() {
-   wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
-}
-?>
-
-<?php
 
 // Ajouter la prise en charge des images mises en avant
 add_theme_support( 'post-thumbnails' );
@@ -24,7 +17,27 @@ function enqueue_motaphoto_styles() {
 // Action pour ajouter la fonction à la file d'attente des styles
 add_action('wp_enqueue_scripts', 'enqueue_motaphoto_styles');
 
-// enregistrement des emplacements de menus
+
+
+function enqueue_custom_scripts() {
+   // 4. Enregistrez le script jQuery 
+   wp_enqueue_script('jquery');
+
+   // Enregistrez votre script personnalisé
+   wp_enqueue_script(
+       'custom-script',
+       get_template_directory_uri() . '/assets/js/script.js', // Chemin vers votre script
+       array('jquery'), // Dépendance à jQuery
+       '1.0', // Version de votre script
+       true // Chargez le script dans le pied de page (true) ou l'en-tête (false)
+   );
+}
+
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+
+
+
+// 5. enregistrement des emplacements de menus
 function register_my_menus() {
     register_nav_menus(
         array(

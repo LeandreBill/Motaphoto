@@ -25,7 +25,7 @@
         </div>
 
 
-        <!-- on ajoute notre menu dans le header-->
+        <!-- 5. on ajoute notre menu dans le header-->
         <nav class="header-nav">
             <?php
     wp_nav_menu(array(

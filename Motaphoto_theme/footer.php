@@ -1,3 +1,7 @@
+</main>  <!-- 3. appel de la modal dans le footer -->
+
+<?php get_template_part('template-parts/modal/modal');?>
+
 <footer>
     <nav class="footer-nav">
         <?php
