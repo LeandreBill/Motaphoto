@@ -130,6 +130,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
   .container {
     width: 1440px;
     max-width: 100%;
+    margin: 0 auto;
   }
   
   /****** HEADER *********/
