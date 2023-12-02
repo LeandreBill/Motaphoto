@@ -10,7 +10,7 @@
 
 <body <?php body_class(); ?>>
 
-    <?php wp_body_open(); ?>
+    <?php wp_body_open(); ?>  <!-- permet à des extensions d’écrire du code au début du body-->
 
     <header class="header">
 
