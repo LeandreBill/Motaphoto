@@ -20,6 +20,8 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 
 /***** reset de base ***/
 @import url("assets/css/modal.css");
+@import url("assets/css/single.css");
+
 
 * {
     box-sizing: border-box;
@@ -137,7 +139,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
   
 
 
-  /****** HEADER *********/
+  /****** 2. HEADER *********/
   
   header {
     display: flex;
@@ -163,38 +165,48 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
     right: 214px;
     height: 24px;
     font-size: 16px;
+    font-weight: 400;
     text-transform: uppercase;
   }
 
+  .main-menu a:hover {
+    font-weight: 700;
+  }
+  
+  .hamburger-icon {
+    display: none; /* cache le menu hamburger en format desktop */
+  }
 
 
+/***** 7. Section  hero****/
 
-/***** 7. Section galerie hero****/
+.photo-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.hero-banner {
-  background-image: url("img/header.webp");
-  background-size: cover;
+.photo-hero img {
   width: 100%;
-  height: 962px;
-  position: relative;
+  height: 700px;
+  object-fit: cover;
 }
-/*
-.hero-banner h1 {
-  font-family: "Space Mono", monospace;
-  font-size: 96px;
-  font-style: italic;
-  font-weight: 700;
-  line-height: 142px;
-  letter-spacing: 0em;
-  text-align: center;
-  text-transform: uppercase;
-  color: #ffffff;
-  margin: 0 auto;
+
+.photo-hero h2 {
   position: absolute;
-  transform: translateY(50%);
+  max-width: 90%;
+  font-size: 6rem;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 5rem;
+  -webkit-text-stroke: 3px white;
+  -webkit-text-fill-color: transparent;
 }
-*/
-/**** section gallery *****/
+
+
+/**** 9. section gallery *****/
 
 .gallery {
   padding-top: 46px;
@@ -212,13 +224,14 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 
 /* Styles pour les éléments de la galerie de photos */
 .photo-item {
-  width: calc (50% - 10px); /* Calcule la largeur en fonction de l'espacement */
+  position: relative;
+  width: calc(50% - 10px); /* Calcule la largeur en fonction de l'espacement */
   margin-bottom: 2vh; /* Espacement de 2% en bas pour s'adapter à la hauteur de l'écran */
   text-align: center; /* Centre le contenu horizontalement */
 }
 
 /* Styles pour les images de la galerie */
-.photo-item img {
+.photo-items img {
   width: 564px; /* Largeur fixe pour les images de 564px */
   height: 495px; /* Hauteur fixe pour les images de 495px */
   object-fit: cover; /* Utilisez object-fit pour ajuster la taille de l'image */
@@ -228,6 +241,57 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
   .photo-item {
     width: 100%; /* Un élément par ligne sur mobile */
   }
+}
+
+/**** 9. icones photos galerie *****/
+
+.photo-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  display: none;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5); /* Couleur d'arrière-plan semi-transparente */
+  transition: opacity 0.3s;
+}
+
+.photo-items:hover .photo-icons {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+.photo-infos {
+  position: relative;
+  /*width: 100%;
+  height: 40%;*/
+  display: flex;
+
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+  padding: 10px 25px;
+  align-items: flex-end;
+}
+.photo-infos p :nth-child(1) {
+  font-family: "Poppins";
+}
+.photo-infos p :nth-child(2) {
+  font-family: "Space Mono";
+}
+
+.fullscreen-icon,
+.single-page-icon {
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+a.fullscreen-icon {
+  align-self: flex-end;
 }
 
 
@@ -247,7 +311,9 @@ select {
   text-transform: uppercase;
   color: #313144;
   letter-spacing: 1px;
+  padding-left: 15px;
 }
+
 select:nth-child(1) {
   margin-right: 25px;
 }
@@ -272,7 +338,7 @@ select:nth-child(3) {
 
 
   
-  /***** FOOTER ******/
+  /***** 2. FOOTER ******/
 .footer {
     width: 100%;
     max-width: 100%;

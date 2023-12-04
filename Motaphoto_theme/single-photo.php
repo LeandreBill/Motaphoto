@@ -1,3 +1,5 @@
+<!-- 9. création de la page article -->
+
 <?php get_header(); ?>
 <div class="container">
     <section class="full-screen-section post">
@@ -42,7 +44,7 @@
             <?php    $current_photo = $post;?>
             <div class="text-contact-container">
                 <p>Cette photo vous intéresse ?</p>
-                <a href="#myModal" id="reference-field" class="contact open-modal-link"
+                <a href="#popmake-96" id="reference-field" class="contact open-modal-link"
                     data-photo-ref="<?php echo esc_attr(get_field('reference', $current_photo)); ?>">Contact</a>
             </div>
 

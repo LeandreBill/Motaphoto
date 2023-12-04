@@ -1,3 +1,5 @@
+<!-- 2.création header -->
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -7,6 +9,8 @@
 
     <?php wp_head(); ?>
 </head>
+
+
 
 <body <?php body_class(); ?>>
 
