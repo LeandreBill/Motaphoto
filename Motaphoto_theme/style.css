@@ -271,30 +271,17 @@ select:nth-child(3) {
 }
 
 
-
-
-/***** FOOTER ******/
-
-footer {
-  border-top: 1px solid black;
-  position: relative;
-  bottom: 0px;
-  margin-top: 40px;
-  margin-top: 40px;
-}
-
-
   
   /***** FOOTER ******/
-  
-  footer {
-    height: 40px;
+.footer {
     width: 100%;
     max-width: 100%;
     border-top: 1px solid black;
     position: relative;
     bottom: 0px;
-  }
+    margin-top: 40px;
+}
+
   
   .footer-menu {
     margin: 0 auto;
