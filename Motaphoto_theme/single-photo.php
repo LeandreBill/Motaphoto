@@ -24,11 +24,11 @@
         ?>
 
             <h2><?php the_title(); ?></h2>
-            <p>Référence: <?php echo get_field('reference'); ?></p>
+            <p>Référence: <?php echo get_post_meta(get_the_ID(), 'reference', true); ?></p>
             <p>Catégorie: <?php the_terms(get_the_ID(), 'categories-photos'); ?></p>
             <p>Format: <?php the_terms(get_the_ID(), 'format'); ?></p>
-            <p>Type: <?php echo get_field('type'); ?></p>
-            <p>Année: <?php echo get_the_date('Y'); ?></p>
+            <p>Type: <?php echo get_post_meta(get_the_ID(), 'type', true); ?></p>
+            <p>Année: <?php echo get_post_meta(get_the_ID(), 'date', true); ?></p>
             <?php
             endwhile;
         endif;
@@ -45,7 +45,7 @@
             <div class="text-contact-container">
                 <p>Cette photo vous intéresse ?</p>
                 <a href="#popmake-96" id="reference-field" class="contact open-modal-link"
-                    data-photo-ref="<?php echo esc_attr(get_field('reference', $current_photo)); ?>">Contact</a>
+                    data-photo-ref="<?php echo esc_attr(get_post_meta(get_the_ID(), 'reference', true)); ?>">Contact</a>
             </div>
 
             <?php

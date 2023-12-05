@@ -1,6 +1,6 @@
 /* 9. Styles pour l'article */
 .post {
-    width: 80%;
+    width: 100%;
     display: flex; /* Utilisation de flexbox pour aligner les blocs */
     flex-wrap: wrap; /* Les blocs passent à la ligne lorsque l'écran est étroit */
     justify-content: center;
@@ -12,7 +12,8 @@
   /* Styles pour le bloc de détails de la photo (50% de largeur) */
   .photo-details {
     flex-basis: 50%; /* 50% de largeur */
-    padding: 20px; /* Ajoutez une marge intérieure pour l'espace */
+    padding-bottom: 20px; /* Ajoutez une marge intérieure pour l'espace */
+    Margin-top: 20px;
     box-sizing: border-box; /* Pour inclure la marge intérieure dans la largeur de 50% */
     border-bottom: 1px solid black;
     font-family: "Space Mono";
@@ -22,13 +23,17 @@
     letter-spacing: 1px;
     text-transform: uppercase;
   }
-  .photo-details h1 {
+  .photo-details h2 {
     font-family: "Space Mono";
     font-size: 66px;
     font-style: italic;
     font-weight: 400;
     line-height: 58px;
     text-transform: uppercase;
+  }
+
+  .photo-details p {
+  margin-top: 20px;
   }
   /* Styles pour le bloc de l'image de la photo (50% de largeur) */
   .photo-image {
@@ -52,19 +57,24 @@
     font-family: "Space Mono", monospace;
     border-bottom: 1px solid black;
   }
-  
-  .additional-content p {
-  }
+
+  .text-contact-container {
+    display: flex;
+    align-items: center;
+}
+
+.text-contact-container p {
+   padding-right: 40px;
+}
+
   .contact {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 272px;
     height: 50px;
-  
     border: 1px solid black;
     border-radius: 2px;
-  
     font-family: "Space Mono", monospace;
     font-size: 12px;
     font-weight: 400;
@@ -72,6 +82,13 @@
     background-color: #d8d8d8;
   }
   
+  .contact:hover {
+    transform: scale(1.05);
+    background-color: #000000;
+    color: #ffff;
+    font-weight: 700;
+  }
+
   /* Styles pour les flèches de navigation */
   .thumbnail-container {
     display: none;
@@ -95,7 +112,7 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    width: 10%;
+    width: 7%;
   }
   
   .thumbnail {
@@ -120,7 +137,7 @@
   
   .prev-link,
   .next-link {
-    font-size: 24px;
+   /* font-size: 24px;*/
   }
   
   .nav-link:hover .thumbnail img {
