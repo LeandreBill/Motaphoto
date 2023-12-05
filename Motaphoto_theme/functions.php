@@ -58,7 +58,7 @@ function register_my_menus() {
 add_action('after_setup_theme', 'register_my_menus');
 
 
-// bouton charger plus page accueil
+// 11. bouton charger plus page accueil
 function load_more_photos() {
 
     $args = array(
@@ -102,7 +102,7 @@ add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
 
 
 
-// bouton charger plus single-page
+// 11. bouton charger plus single-page
 function load_all_photos() {
     $args = array(
         'post_type' => 'photo',
@@ -129,7 +129,7 @@ function load_all_photos() {
 
     
 
- // Vérifie si toutes les photos sont chargées en comparant avec le nombre total de photos
+ // 11. Vérifie si toutes les photos sont chargées en comparant avec le nombre total de photos
     $total_photos = wp_count_posts('photo')->publish;
     $photos_loaded = $query->found_posts;
     $all_loaded = ($photos_loaded >= $total_photos);
@@ -154,7 +154,7 @@ add_action('wp_ajax_nopriv_load_all_photos', 'load_all_photos');
 
 
 
-// ajout de la configuration ajax pour les boutons charger plus
+// 11. ajout de la configuration ajax pour les boutons charger plus
 
 function add_ajax_library() {
     wp_enqueue_script('load-more-photos', get_template_directory_uri() . '/assets/js/load-more.js', array('jquery'), '', true);
@@ -182,7 +182,7 @@ add_action('wp_enqueue_scripts', 'custom_enqueue_scripts', 10);
 
 
 
-//fonction pour les filtres
+// 11.fonction pour les filtres
 function filter_photos() {
 
     $args = array(
@@ -190,7 +190,7 @@ function filter_photos() {
         'posts_per_page' => 12
     );
 
-    // Filtre par catégorie
+    // 11. Filtre par catégorie
     if (isset($_GET['category_filter']) && $_GET['category_filter']) {
 
         $args['tax_query'] = array(

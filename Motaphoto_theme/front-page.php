@@ -81,7 +81,7 @@ $photo_ids = array();
             $query->the_post();
             get_template_part('template-parts/photo_block');
 
-			  // Récupére l'ID de la photo et ajoute au tableau
+			  // Récupére l'ID de la photo et ajoutez-le au tableau
         $photo_id = get_the_ID();
         $photo_ids[] = $photo_id;
         endwhile;
