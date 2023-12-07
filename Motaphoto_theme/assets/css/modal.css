@@ -1,7 +1,7 @@
 /* 3. création de la modal pour contact form 7 */
 
 /* Styles pour le conteneur de la modal */
-.modal-container {
+.modal-container 	 {
   display: none;
   position: fixed;
   top: 0;
@@ -11,7 +11,7 @@
   z-index: 998; /* en arrière-plan par rapport à la modal */
 }
 
-.overlay {
+.overlay 	{
   position: absolute;
   top: 0;
   left: 0;
@@ -22,7 +22,7 @@
 
 
 /* Styles pour la modal */
-.modal {
+.modal 	{
   width: 597px; /* a changer en % */
   height: 769px; /* Occupe toute la hauteur */
   margin: 0 auto;
@@ -35,23 +35,23 @@
   animation: animatetop 0.4s;
   z-index: 999; /* devant la couche semi-transparente */
 }
-.modal-header {
+.modal-header 	{
   margin-top: 10px;
-  background-image: url("Motaphoto_theme/img/Contact_header.png");
+  background-image: url("D:\Wamp\www\Motaphoto\wordpress\wp-content\themes\Motaphoto_theme\img\contact_header.png");
   background-size: cover;
   height: 106px;
 }
 /* Styles pour le contenu de la modal */
-.modal-content {
+.modal-content 	{
   position: relative;
   margin: 0 auto;
-  width: 40%; /* Largeur de la modal */
+  width: 70%; /* Largeur de la modal */
 }
 
 /* Styles pour l'animation d'ouverture de la modal */
 
 /* Classe ajoutée via JavaScript pour montrer la modal */
-.modal-container.show {
+.modal-container.show	{
   display: block;
   animation: fadeInModal 1000ms forwards;
 }
