@@ -3,6 +3,9 @@
 <div class="overlay" id="overlay"></div> <!-- Couche semi-transparente -->
     <div id="myModal" class="modal">
         <div class="modal-header">
+        <img src="<?php echo get_template_directory_uri() . '/wp-content/themes/Motaphoto_theme/img/contact_header.png' ?>"
+    alt="Titre contact"
+    width="100%" />
             <!-- Contenu de l'en-tête de la modal -->
         </div>
         <div class="modal-content">
