@@ -146,3 +146,50 @@
   line-height: 18px;
 }
 */
+
+/************************************************   Media queries   ***************************************************************/
+/* Pour les écrans de taille inférieure à 782px, WordPress ajuste la hauteur de la barre d'administration à 46px */
+@media screen and (max-width: 782px) {
+  body.admin-bar .modal-container {
+    top: 46px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 500px) {
+  .modal {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 90vw;
+    height: 90vh;
+  }
+  .modal-content {
+    width: 85%;
+  }
+  .modal-header {
+    margin-top: 10px;
+  
+    background-size: cover;
+    height: 13%;
+    margin-bottom: -25px;
+  }
+  .wpcf7-textarea {
+    height: auto;
+  }
+  textarea.wpcf7-textarea.wpcf7-not-valid {
+    height: 137px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .modal {
+    width: 60vw;
+  }
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .modal {
+    width: 60vw;
+  }
+}

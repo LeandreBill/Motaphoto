@@ -1,5 +1,3 @@
-// gestion modal contact bis
-
 //modal
 jQuery(document).ready(function ($) {
   var modalContainer = $("#modal-container");
@@ -19,8 +17,6 @@ jQuery(document).ready(function ($) {
     modalContainer.css("display", "none");
   });
 });
-
-
 
 //thumbnail single-page
 
@@ -47,81 +43,113 @@ jQuery(document).ready(function ($) {
 
     $("#hover-thumbnail-container").html(clickableThumbnail).show();
   });
-
-
- // Ajout d'un écouteur d'événement pour chaque lien
- menuLinks.forEach((link) => {
-  link.addEventListener("click", closeMenu);
 });
 
-// Écouteur d'événement pour le redimensionnement de la fenêtre
-window.addEventListener("resize", function () {
-  if (window.innerWidth > 768) {
-    mainMenu.classList.remove("mobile-menu");
+// menu responsive
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuIcon = document.getElementById("menu-icon");
+  const mainMenu = document.querySelector(".main-menu");
+  const menuLinks = mainMenu.querySelectorAll("a"); // sélectionner tous les liens dans le menu
+
+  const closeMenu = () => {
+    mainMenu.classList.add("closing");
+    mainMenu.addEventListener(
+      "animationend",
+      function () {
+        mainMenu.classList.remove("mobile-menu");
+        mainMenu.classList.remove("closing");
+      },
+      { once: true }
+    );
+
     menuIcon.classList.remove("fa-times");
     menuIcon.classList.add("fa-bars");
-  }
-});
+  };
 
+  menuToggle.addEventListener("click", function () {
+    if (mainMenu.classList.contains("mobile-menu")) {
+      closeMenu();
+    } else {
+      mainMenu.classList.add("mobile-menu");
+      menuIcon.classList.remove("fa-bars");
+      menuIcon.classList.add("fa-times");
+    }
+  });
+
+  // Ajout d'un écouteur d'événement pour chaque lien
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // Écouteur d'événement pour le redimensionnement de la fenêtre
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 768) {
+      mainMenu.classList.remove("mobile-menu");
+      menuIcon.classList.remove("fa-times");
+      menuIcon.classList.add("fa-bars");
+    }
+  });
+});
 
 // Filtres
 
 jQuery(document).ready(function ($) {
-$("select").each(function () {
-  var $this = $(this),
-    numberOfOptions = $(this).children("option").length;
+  $("select").each(function () {
+    var $this = $(this),
+      numberOfOptions = $(this).children("option").length;
 
-  $this.addClass("select-hidden");
-  $this.wrap('<div class="custom-dropdown"></div>');
-  $this.after(
-    '<div class="dropdown-toggle">' +
-      '<span class="selected-text">' +
-      $this.children("option").eq(0).text() +
-      "</span>" +
-      '<span class="arrow"><img src="wp-content/themes/motaphoto/img/arrow_select_icon.png"></span></div>'
-  );
+    $this.addClass("select-hidden");
+    $this.wrap('<div class="custom-dropdown"></div>');
+    $this.after(
+      '<div class="dropdown-toggle">' +
+        '<span class="selected-text">' +
+        $this.children("option").eq(0).text() +
+        "</span>" +
+        '<span><img src="/wp-content/themes/Motaphoto_theme/img/select_icon.png" class="arrow"></span></div>'
+    );
 
-  var $styledSelect = $this.next("div.dropdown-toggle");
+    var $styledSelect = $this.next("div.dropdown-toggle");
 
-  var $list = $("<ul />", {
-    class: "dropdown-menu",
-  }).insertAfter($styledSelect);
+    var $list = $("<ul />", {
+      class: "dropdown-menu",
+    }).insertAfter($styledSelect);
 
-  for (var i = 0; i < numberOfOptions; i++) {
-    $("<li />", {
-      text: $this.children("option").eq(i).text(),
-      rel: $this.children("option").eq(i).val(),
-    }).appendTo($list);
-  }
+    for (var i = 0; i < numberOfOptions; i++) {
+      $("<li />", {
+        text: $this.children("option").eq(i).text(),
+        rel: $this.children("option").eq(i).val(),
+      }).appendTo($list);
+    }
 
-  var $listItems = $list.children("li");
+    var $listItems = $list.children("li");
 
-  $styledSelect.on("click", function (e) {
-    e.stopPropagation();
-    var $arrow = $(this).find(".arrow");
-    $("div.dropdown-toggle.active")
-      .not(this)
-      .each(function () {
-        $(this).removeClass("active").next("ul.dropdown-menu").hide();
-        $(this).find(".arrow").removeClass("arrow-reverse");
-      });
-    $(this).toggleClass("active").next("ul.dropdown-menu").toggle();
-    $arrow.toggleClass("arrow-reverse");
+    $styledSelect.on("click", function (e) {
+      e.stopPropagation();
+      var $arrow = $(this).find(".arrow");
+      $("div.dropdown-toggle.active")
+        .not(this)
+        .each(function () {
+          $(this).removeClass("active").next("ul.dropdown-menu").hide();
+          $(this).find(".arrow").removeClass("arrow-reverse");
+        });
+      $(this).toggleClass("active").next("ul.dropdown-menu").toggle();
+      $arrow.toggleClass("arrow-reverse");
+    });
+
+    $listItems.on("click", function (e) {
+      e.stopPropagation();
+      $styledSelect.find(".selected-text").text($(this).text());
+      $styledSelect.removeClass("active");
+      $this.val($(this).attr("rel"));
+      $list.hide();
+      $this.trigger("change");
+    });
+
+    $(document).on("click", function () {
+      $styledSelect.removeClass("active");
+      $list.hide();
+    });
   });
-
-  $listItems.on("click", function (e) {
-    e.stopPropagation();
-    $styledSelect.find(".selected-text").text($(this).text());
-    $styledSelect.removeClass("active");
-    $this.val($(this).attr("rel"));
-    $list.hide();
-    $this.trigger("change");
-  });
-
-  $(document).on("click", function () {
-    $styledSelect.removeClass("active");
-    $list.hide();
-  });
-});
-});
 });

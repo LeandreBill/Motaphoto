@@ -18,14 +18,10 @@
 
     <header class="header">
 
-        <div class="logo">
-            <?php
-    if (has_custom_logo()) {
-        the_custom_logo();
-    } else {
-        echo '<a href="' . esc_url(home_url('/')) . '">' . get_bloginfo('name') . '</a>';
-    }
-    ?>
+        <div class="custom-logo">
+            
+        <img src="<?php echo get_bloginfo('template_url') ?>/img/logo.png" alt="Mon logo"> 
+
         </div>
 
 
@@ -38,5 +34,11 @@
        'menu_class' => 'main-menu', // Classe CSS pour la liste du menu
     ));
     ?>
+
+<div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars" id="menu-icon"></i>
+                </div>
         </nav>
     </header>
+
+    <main>

@@ -3,7 +3,7 @@
 </main>  <!-- 3. appel de la modal dans le footer -->
 
 <?php get_template_part('template-parts/modal/modal');?>
-
+<?php get_template_part('template-parts/lightbox');?>
 
 <footer>
     <nav class="footer-nav">

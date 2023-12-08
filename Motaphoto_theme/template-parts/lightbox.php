@@ -10,7 +10,7 @@
 
         <div class="lightbox-infos">
             <p class=" photo-ref">
-                <?php echo get_field('reference', get_the_ID()); ?>
+            <?php echo get_post_meta(get_the_ID(), 'reference', true); ?>
             </p>
             <p class="photo-cat" id="lightbox-category">
                 <?php

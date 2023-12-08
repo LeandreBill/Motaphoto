@@ -9,7 +9,7 @@
        </a>
        <div class="photo-icons"
            data-cat="<?php echo esc_attr(get_the_terms(get_the_ID(), 'categories-photos')[0]->name); ?>">
-           <a href="" class="fullscreen-icon"
+           <a href="<?php echo wp_get_attachment_image_url( get_the_ID(), 'full' ); ?>" class="fullscreen-icon"
                data-reference="<?php echo esc_attr(get_post_meta(get_the_ID(), 'reference', true)); ?>"
                data-image="<?php echo esc_url(get_the_post_thumbnail_url()); ?>" data-title="<?php the_title(); ?>">
            </a>
@@ -20,3 +20,4 @@
            </div>
        </div>
    </div>
+
