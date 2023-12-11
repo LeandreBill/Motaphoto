@@ -25,15 +25,19 @@
         </div>
 
 
-        <!-- 5. on ajoute notre menu dans le header-->
+        <!-- 2. on ajoute notre menu dans le header-->
         <nav class="header-nav">
             <?php
     wp_nav_menu(array(
         'theme_location' => 'main-menu', // Emplacement du menu à afficher
         'container' => 'ul', // Pour généré une ul et non une div comme container
-       'menu_class' => 'main-menu', // Classe CSS pour la liste du menu
-    ));
-    ?>
+       'menu_class' => 'main-menu', // Classe CSS pour la liste du menu'
+    )); ?> 
+    
+
+
+
+
 
 <div class="menu-toggle" id="menu-toggle">
                     <i class="fas fa-bars" id="menu-icon"></i>

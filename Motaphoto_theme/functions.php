@@ -1,20 +1,20 @@
 <?php
 
-// Ajouter la prise en charge des images mises en avant
+// 2. Ajouter la prise en charge des images mises en avant
 add_theme_support( 'post-thumbnails' );
 
-// Ajouter automatiquement le titre du site dans l'en-tête du site
+// 2. Ajouter automatiquement le titre du site dans l'en-tête du site
 add_theme_support( 'title-tag' );
 
-//ajouter le logo
+// 2.ajouter le logo
 add_theme_support('custom-logo');
 
-// Enqueue le fichier style.css du thème
+// 2. Enqueue le fichier style.css du thème
 function enqueue_motaphoto_styles() {
     wp_enqueue_style('motaphoto-style', get_stylesheet_uri());
 }
 
-// Action pour ajouter la fonction à la file d'attente des styles
+// 2. Action pour ajouter la fonction à la file d'attente des styles
 add_action('wp_enqueue_scripts', 'enqueue_motaphoto_styles');
 
 
@@ -23,7 +23,7 @@ function enqueue_custom_scripts() {
    // 4. Enregistrez le script jQuery 
    wp_enqueue_script('jquery');
 
-   // Enregistrez votre script personnalisé
+   // 4. Enregistrez votre script personnalisé
    wp_enqueue_script(
        'custom-script',
        get_template_directory_uri() . '/assets/js/script.js', // Chemin vers votre script
@@ -33,7 +33,7 @@ function enqueue_custom_scripts() {
    );
 }
 
-  // Enqueue le fichier lightbox.js
+  // 10. Enqueue le fichier lightbox.js
  wp_enqueue_script(
     'lightbox',
     get_template_directory_uri() . '/assets/js/lightbox.js', // Assurez-vous que ce chemin est correct
@@ -46,7 +46,7 @@ add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 
 
-// 5. enregistrement des emplacements de menus
+// 2. enregistrement des emplacements de menus
 function register_my_menus() {
     register_nav_menus(
         array(
@@ -58,7 +58,7 @@ function register_my_menus() {
 add_action('after_setup_theme', 'register_my_menus');
 
 
-// 11. bouton charger plus page accueil
+// 7.4. bouton charger plus page accueil
 function load_more_photos() {
 
     $args = array(
@@ -102,7 +102,7 @@ add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
 
 
 
-// 11. bouton charger plus single-page
+// 8.8. bouton charger plus single-page
 function load_all_photos() {
     $args = array(
         'post_type' => 'photo',
@@ -129,7 +129,7 @@ function load_all_photos() {
 
     
 
- // 11. Vérifie si toutes les photos sont chargées en comparant avec le nombre total de photos
+ // Vérifie si toutes les photos sont chargées en comparant avec le nombre total de photos
     $total_photos = wp_count_posts('photo')->publish;
     $photos_loaded = $query->found_posts;
     $all_loaded = ($photos_loaded >= $total_photos);
@@ -154,7 +154,7 @@ add_action('wp_ajax_nopriv_load_all_photos', 'load_all_photos');
 
 
 
-// 11. ajout de la configuration ajax pour les boutons charger plus
+// 7.4. ajout de la configuration ajax pour les boutons charger plus
 
 function add_ajax_library() {
     wp_enqueue_script('load-more-photos', get_template_directory_uri() . '/assets/js/load-more.js', array('jquery'), '', true);
@@ -182,7 +182,7 @@ add_action('wp_enqueue_scripts', 'custom_enqueue_scripts', 10);
 
 
 
-// 11.fonction pour les filtres
+// 7.2. fonction pour les filtres
 function filter_photos() {
 
     $args = array(
@@ -190,7 +190,7 @@ function filter_photos() {
         'posts_per_page' => 12
     );
 
-    // 11. Filtre par catégorie
+    // Filtre par catégorie
     if (isset($_GET['category_filter']) && $_GET['category_filter']) {
 
         $args['tax_query'] = array(
@@ -212,7 +212,7 @@ function filter_photos() {
         );
     }
 
-// Tri
+// 7.2. Tri
 if (isset($_GET['sort_order'])) {
     $args['orderby'] = 'date';  // Tri toujours par date
 

@@ -1,4 +1,4 @@
-// 11. tri des photos en Ajax 
+// 7.2.  tri des photos en Ajax 
 
 jQuery(document).ready(function ($) {
     // Lorsqu'une valeur est sélectionnée dans le formulaire

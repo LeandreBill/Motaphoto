@@ -1,4 +1,4 @@
-<!-- 12. creation lightbox photo -->
+<!-- 10. creation lightbox photo -->
 
 <div id="lightbox" style="display = none">
     <button class="lightbox__close" id="close-lightbox">X</button>
@@ -24,16 +24,6 @@
        echo implode(', ', $category_names);
    }
 
-
-$terms = get_the_terms(get_the_ID(), 'categories-photos');
-if ($terms && !is_wp_error($terms)) {
-
-    $category_names = array();
-    foreach ($terms as $term) {
-        $category_names[] = esc_html($term->name);
-    }
-    echo implode(', ', $category_names);
-}
 
    ?>
             </p>

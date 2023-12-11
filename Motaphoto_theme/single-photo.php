@@ -1,5 +1,5 @@
-<!-- 9. création de la page article -->
-
+<!-- 8. création de la page article -->
+<!-- 8.2 photo et attribut -->
 <?php get_header(); ?>
 <div class="container">
     <section class="full-screen-section post">
@@ -40,6 +40,7 @@
             <?php the_post_thumbnail(); ?>
         </div>
 
+        <!-- 8.3. ajout de la modale via un bouton -->
         <div class="additional-content">
             <?php    $current_photo = $post;?>
             <div class="text-contact-container">
@@ -48,7 +49,10 @@
                     data-photo-ref="<?php echo esc_attr(get_post_meta(get_the_ID(), 'reference', true)); ?>">Contact</a>
             </div>
 
+
+        <!-- 8.4/5. photo en miniature -->
             <?php
+
 
 $previous_photo = get_previous_post();
 $next_photo = get_next_post();
@@ -61,7 +65,7 @@ $next_photo = get_next_post();
     // Récupére le post précédent
     $previous_photo = get_previous_post();
 
-    // Si l'article précédent existe, afficher sa miniature
+    // 8.4. Si l'article précédent existe, afficher sa miniature
     if ($previous_photo) :
         $prev_thumbnail_url = get_the_post_thumbnail_url($previous_photo->ID, 'thumbnail');
         $prev_post_url = get_permalink($previous_photo->ID); // Obtenez l'URL du post précédent
@@ -74,7 +78,7 @@ $next_photo = get_next_post();
                     <?php endif; ?>
                 </div>
 
-                <!-- Conteneur pour les flèches -->
+                <!-- 8.6. Conteneur pour les flèches -->
                 <div class="navigation-links">
                     <!-- Lien précédent -->
                     <?php if ($previous_photo) : ?>
@@ -107,7 +111,8 @@ $next_photo = get_next_post();
 
 
     </section>
-
+            
+               <!-- 8.7. affichage des photos faisant partie de la méme catégorie -->
     <section class="related-photo-section">
         <div class="photo-appart">
 
@@ -133,12 +138,14 @@ $next_photo = get_next_post();
             ),
         );
     }
+
+  
         $query = new WP_Query($args);
 
         if ($query->have_posts()) :
             while ($query->have_posts()) :
                 $query->the_post();
-                get_template_part('template-parts/photo_block');
+                get_template_part('template-parts/photo_block'); // 9. Appel du block photo pour l'ensemble des photos affichées
 
             endwhile;
     endif;
@@ -146,6 +153,7 @@ $next_photo = get_next_post();
 ?>
             </div>
 
+            <!-- 8.8. bouton charger plus de la catégorie -->
             <button class="load-more" id="load-more-single">Toutes les photos</button>
         </div>
 

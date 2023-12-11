@@ -18,6 +18,8 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 */
 
 
+
+
 /***** reset de base ***/
 @import url("assets/css/modal.css");
 @import url("assets/css/single.css");
@@ -58,6 +60,7 @@ h6 {
 
 /************************************** FONTS ***********************************************************/
 
+/*  2. on ajoute les polices dans le style aprés les avoirs télécharger dans fonts--> */
 @font-face {
   font-family: "Space Mono";
   font-style: normal;
@@ -122,7 +125,7 @@ body {
   margin: 0 auto;
   margin-top: 20px;
 }
-/************************************************ HEADER ***********************************************************/
+/************************************************ 2. HEADER ***********************************************************/
 
 header {
   display: flex;
@@ -255,7 +258,7 @@ body.admin-bar .mobile-menu {
   }
 }
 
-/******** hero *********/
+/******** 7.1. hero *********/
 
 .photo-hero {
   display: flex;
@@ -285,9 +288,9 @@ body.admin-bar .mobile-menu {
   -webkit-text-fill-color: transparent;
 }
 
-/************************************** section gallery ***********************************************************/
+/************************************** 7. section gallery ***********************************************************/
 
-/********** filtres ********/
+/********** 7.2.  filtres ********/
 
 .filter-options {
   display: flex;
@@ -440,7 +443,7 @@ select:nth-child(3) {
   margin-left: auto;
 }
 
-/********** galerie ********/
+/********** 7.3. galerie ********/
 
 .gallery {
   padding-top: 46px;
@@ -473,7 +476,7 @@ select:nth-child(3) {
   }
 }
 
-/****** icones photo galerie ******/
+/****** 9. icones photo galerie ******/
 
 .photo-icons {
   position: absolute;
@@ -543,7 +546,7 @@ a.fullscreen-icon {
   margin: 0 auto;
 }
 
-/********* bouton charger plus ********/
+/********* 7.4/ 8.8. bouton charger plus ********/
 
 .load-more {
   display: block;
@@ -568,7 +571,7 @@ a.fullscreen-icon {
   font-weight: 700;
 }
 
-/********************************************** Footer ********************************************************/
+/********************************************** 2. Footer ********************************************************/
 
 footer {
   width: 100%;
@@ -596,7 +599,7 @@ footer {
   width: auto;
 }
 
-/********************************************** lightbox ********************************************************/
+/********************************************** 10. lightbox ********************************************************/
 #lightbox {
   position: fixed;
   top: 0;
@@ -747,7 +750,7 @@ footer {
 }
 
 
-/*************************************** MEDIA QUERIES *****************************************************/
+/*************************************** 11. MEDIA QUERIES *****************************************************/
 
 @media (min-width: 769px) {
   .main-menu {

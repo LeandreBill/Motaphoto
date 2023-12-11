@@ -2,6 +2,7 @@
 
 <?php get_header(); ?>
 
+<!-- 7.1 Hero -->
 <section class="hero">
     <div class="photo-hero">
         <?php
@@ -23,6 +24,7 @@
 
 </section>
 
+<!-- 7.2. Filtres des photos -->
 <section class="gallery container">
     <div class="filter-options">
         <form id="filter-form" method="GET">
@@ -79,9 +81,9 @@ $photo_ids = array();
     if ($query->have_posts()) :
         while ($query->have_posts()) :
             $query->the_post();
-            get_template_part('template-parts/photo_block');
+            get_template_part('template-parts/photo_block'); // 9. Appel du block photo pour l'ensemble des photos affichées
 
-			  // Récupére l'ID de la photo et ajoutez-le au tableau
+			  // Récupére l'ID de la photo et ajoute au tableau
         $photo_id = get_the_ID();
         $photo_ids[] = $photo_id;
         endwhile;
@@ -92,6 +94,7 @@ $photo_ids = array();
     ?>
     </div>
 
+<!-- 7.4. chargez les photos -->
     <button class="load-more" id="load-more">Charger plus</button>
 </section>
 

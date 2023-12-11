@@ -1,4 +1,4 @@
-/* 3. création de la modal pour contact form 7 */
+/* 4. création de la modal pour contact form 7 */
 
 /* Styles pour le conteneur de la modal */
 .modal-container 	 {
@@ -147,7 +147,7 @@
 }
 */
 
-/************************************************   Media queries   ***************************************************************/
+/************************************************  11. Media queries   ***************************************************************/
 /* Pour les écrans de taille inférieure à 782px, WordPress ajuste la hauteur de la barre d'administration à 46px */
 @media screen and (max-width: 782px) {
   body.admin-bar .modal-container {

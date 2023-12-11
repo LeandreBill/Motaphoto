@@ -1,4 +1,4 @@
-//modal
+// 4. Ouverture et fermeture de la modal
 jQuery(document).ready(function ($) {
   var modalContainer = $("#modal-container");
 
@@ -18,7 +18,7 @@ jQuery(document).ready(function ($) {
   });
 });
 
-//thumbnail single-page
+// 8.4. thumbnail single-page
 
 jQuery(document).ready(function ($) {
   // Montrer le conteneur de miniature au démarrage
@@ -27,7 +27,7 @@ jQuery(document).ready(function ($) {
     thumbnailContainer.show();
   }
 
-  // au survol
+  // 8.5. au survol
   $(".nav-link").on("mouseenter", function () {
     var thumbnailUrl = $(this).data("thumbnail");
     var postUrl = $(this).data("postlink");

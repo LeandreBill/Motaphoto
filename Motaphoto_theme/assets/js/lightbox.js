@@ -1,4 +1,4 @@
-// 12.lightbox
+// 10.lightbox
 
 jQuery(document).ready(function ($) {
     var $lightbox = $("#lightbox");

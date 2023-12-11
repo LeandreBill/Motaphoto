@@ -1,4 +1,4 @@
-// 11. appel du bouton en Ajax 
+// 7.4. appel du bouton charger plus en Ajax 
 
 jQuery(document).ready(function ($) {
     let currentPage = 1;
@@ -25,7 +25,7 @@ jQuery(document).ready(function ($) {
     });
   });
   
-  // bouton charger plus de la single page
+  // 8.8. bouton charger plus de la single page
   jQuery(document).ready(function ($) {
     $("#load-more-single").on("click", function () {
       $.ajax({

@@ -1,4 +1,4 @@
-<!-- 3. création de la modal pour popup maker avec id myModal  -->
+<!-- 4. création de la modal pour popup maker avec id myModal  -->
 <div class="modal-container" id="modal-container">
 <div class="overlay" id="overlay"></div> <!-- Couche semi-transparente -->
     <div id="myModal" class="modal">

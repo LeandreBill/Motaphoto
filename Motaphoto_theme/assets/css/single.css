@@ -1,4 +1,5 @@
-/* 9. Styles pour l'article */
+/* 8.1. Styles pour l'article */
+  /* 8.2. style du premier bloc: photo et attribut */
 .post {
     width: 100%;
     display: flex; /* Utilisation de flexbox pour aligner les blocs */
@@ -89,7 +90,7 @@
     font-weight: 700;
   }
 
-  /* Styles pour les flèches de navigation */
+  /* 8.6. Styles pour les flèches de navigation */
   .thumbnail-container {
     display: none;
     position: relative;
@@ -144,7 +145,7 @@
     display: block;
   }
   
-  /**** photos apparentees *****/
+  /**** 8.7. photos apparentees *****/
   .photo-appart {
     display: flex;
     flex-direction: column;
@@ -164,7 +165,7 @@
     gap: 20px;
   }
 
-  /*********************************************     Media Queries    ****************************************************************/
+  /*********************************************    11. Media Queries    ****************************************************************/
 @media (max-width: 767px) {
   .full-screen-section {
    /* flex-direction: column;*/

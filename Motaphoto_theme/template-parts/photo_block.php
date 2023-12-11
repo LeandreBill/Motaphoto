@@ -1,4 +1,4 @@
-<!-- 10. Creation bloc photo -->
+<!-- 9. Creation bloc photo -->
 
 <div class="photo-items" data-photo-id="<?php echo get_the_ID(); ?>">
        <a href="<?php the_permalink(); ?>">
@@ -7,6 +7,8 @@
            <?php the_post_thumbnail(); ?>
            <?php endif; ?>
        </a>
+
+       <!-- 10. ajout de l'icon de la lightboxe et appel de l'image en full lors du clic -->
        <div class="photo-icons"
            data-cat="<?php echo esc_attr(get_the_terms(get_the_ID(), 'categories-photos')[0]->name); ?>">
            <a href="<?php echo wp_get_attachment_image_url( get_the_ID(), 'full' ); ?>" class="fullscreen-icon"

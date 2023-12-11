@@ -1,11 +1,13 @@
 <!-- 2. Création footer -->
 
-</main>  <!-- 3. appel de la modal dans le footer -->
+</main>  <!-- 4. appel de la modal dans le footer -->
 
 <?php get_template_part('template-parts/modal/modal');?>
+
+<!-- 10. appel de la lightbox dans le footer -->
 <?php get_template_part('template-parts/lightbox');?>
 
-<footer>
+<footer>   <!-- 2. on ajoute notre menu dans le footer-->
     <nav class="footer-nav">
         <?php
     wp_nav_menu(array(
