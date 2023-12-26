@@ -58,6 +58,7 @@
                 <option value="">Date </option>
                 <option value="date-DESC">Plus récent au plus ancien</option>
                 <option value="date-ASC">Plus ancien au plus récent</option>
+                    </a>
             </select>
 
         </form>

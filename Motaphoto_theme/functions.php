@@ -127,10 +127,8 @@ function load_all_photos() {
         $response = '';
     }
 
-    
 
- // Vérifie si toutes les photos sont chargées en comparant avec le nombre total de photos
-    $total_photos = wp_count_posts('photo')->publish;
+    $total_photos = wp_count_posts('photo')->publish; // Vérifie si toutes les photos sont chargées en comparant avec le nombre total de photos
     $photos_loaded = $query->found_posts;
     $all_loaded = ($photos_loaded >= $total_photos);
 

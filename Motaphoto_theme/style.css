@@ -363,6 +363,7 @@ select:nth-child(3) {
 }
 
 .arrow {
+  background-image: url(img/select_icon.png);
   float: right;
   height: 6px;
   width: 11px;
@@ -370,6 +371,7 @@ select:nth-child(3) {
 }
 
 .arrow-reverse img {
+  background-image: url(img/select_icon.png);
   transform: rotate(180deg);
 }
 

@@ -45,7 +45,7 @@ jQuery(document).ready(function ($) {
   });
 });
 
-// menu responsive
+// 11.menu responsive
 
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById("menu-toggle");

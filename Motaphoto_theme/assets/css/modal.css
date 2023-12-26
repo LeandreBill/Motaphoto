@@ -107,45 +107,6 @@
   border-radius: 2px;
 }
 
-/**** FORMULAIRE *****/
-/*.wpcf7-form {
-  margin-top: 45px;
-  font-family: "Poppins", monospace;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 18px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #313144;
-  text-transform: uppercase;
-}
-.wpcf7-form p {
-  margin-top: 25px;
-}
-.wpcf7-text {
-  width: 100%;
-  border: 1px solid #b8bbc2;
-  border-radius: 8px;
-  height: 40px;
-}
-.wpcf7-textarea {
-  width: 100%;
-  border: 1px solid #b8bbc2;
-  border-radius: 8px;
-  height: 210px;
-}
-.wpcf7-submit {
-  width: 100%;
-  border: 1px solid #b8bbc2;
-  border-radius: 2px;
-  height: 50px;
-  font-family: "Space Mono", monospace;
-  font-size: 12px;
-  font-weight: 400;
-  background-color: #d8d8d8;
-  line-height: 18px;
-}
-*/
 
 /************************************************  11. Media queries   ***************************************************************/
 /* Pour les écrans de taille inférieure à 782px, WordPress ajuste la hauteur de la barre d'administration à 46px */
